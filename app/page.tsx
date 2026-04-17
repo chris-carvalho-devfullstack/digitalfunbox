@@ -1,5 +1,7 @@
 import { ShieldCheck, BookOpen, MonitorPlay, Zap } from "lucide-react";
 
+export const runtime = 'edge'; // Força o Next.js a usar o runtime compatível com Cloudflare
+
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
