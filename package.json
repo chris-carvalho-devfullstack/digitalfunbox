@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "build:cf": "opennextjs-cloudflare build",
+    "build:cf": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/assets/_worker.js",
     "start": "next start",
     "lint": "next lint",
     "deploy": "npm run build:cf && opennextjs-cloudflare deploy",

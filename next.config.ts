@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Mantemos apenas o typescript para evitar que erros de tipagem travem o build da Cloudflare
-  typescript: { ignoreBuildErrors: true }
+  typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
 
-// Setup para rodar localmente no OpenNext
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
+// Só inicializa o ambiente Cloudflare em desenvolvimento local
+if (process.env.NODE_ENV === "development") {
+  import("@opennextjs/cloudflare").then((m) =>
+    m.initOpenNextCloudflareForDev()
+  );
+}
