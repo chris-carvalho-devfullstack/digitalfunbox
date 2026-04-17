@@ -1,17 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "digital-fun-box",
-  "main": ".open-next/worker.js",
   "compatibility_date": "2026-04-16",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
   ],
-  "pages_build_output_dir": ".open-next/assets",
-  "services": [
-    {
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "digital-fun-box"
-    }
-  ]
+  "pages_build_output_dir": ".open-next/assets"
 }
