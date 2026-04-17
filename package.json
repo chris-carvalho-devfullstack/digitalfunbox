@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "build:cf": "opennextjs-cloudflare build && cp -r .open-next/. .open-next/assets/",
-    "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build:cf && opennextjs-cloudflare deploy",
-    "clean": "rimraf .next .open-next"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "build:cf": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/assets/_worker.js",
+  "start": "next start",
+  "lint": "next lint",
+  "deploy": "npm run build:cf && opennextjs-cloudflare deploy",
+  "clean": "rimraf .next .open-next"
+},
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.1",
     "@supabase/supabase-js": "^2.49.1",
