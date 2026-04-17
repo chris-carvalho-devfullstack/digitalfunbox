@@ -1,10 +1,10 @@
+// middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// "runtime" não é mais permitido no proxy — roda sempre em Node.js
-// "config" com matcher não é mais permitido — proxy intercepta TODAS as rotas
+export const runtime = "edge";
 
-export default function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const userAgent = request.headers.get("user-agent") || "";
 
@@ -22,3 +22,7 @@ export default function proxy(request: NextRequest) {
 
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: ["/checkout/:path*", "/api/keys/:path*"],
+};
