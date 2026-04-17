@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "build:cf": "opennextjs-cloudflare build",
     "start": "next start",
-    "lint": "eslint",
-    "preview": "npm run build:cf && opennextjs-cloudflare preview",
+    "lint": "next lint",
     "deploy": "npm run build:cf && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "clean": "rimraf .next .open-next"
   },
   "dependencies": {
@@ -22,14 +20,16 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "postcss": "^8",
     "rimraf": "^6.0.1",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5",
     "wrangler": "^4.83.0"
   }
