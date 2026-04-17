@@ -1,65 +1,71 @@
-import Image from "next/image";
+import { ShieldCheck, BookOpen, MonitorPlay, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col w-full">
+      {/* Hero Section - Mobile First com sintaxe Tailwind 4 */}
+      <section className="px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-32 bg-linear-to-b from-blue-50/50 to-transparent dark:from-blue-950/10">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl">
+            Sua Experiência Digital <span className="text-blue-600">Otimizada</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+          <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400 px-2 sm:px-0">
+            Acesse guias de configuração passo a passo e gerencie suas licenças de entretenimento com total segurança e rapidez.
+          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/tutoriais/configuracao-basica"
+              className="flex h-14 items-center justify-center rounded-2xl bg-blue-600 px-8 text-base font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-700 active:scale-95"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Começar Tutorial
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/verificar"
+              className="flex h-14 items-center justify-center rounded-2xl border border-zinc-200 bg-white px-8 text-base font-bold text-zinc-900 transition-all hover:bg-zinc-50 active:scale-95 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
             >
-              Learning
-            </a>{" "}
-            center.
+              Ativar Licença
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Grid de Serviços - Agora usando MonitorPlay */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="group relative flex flex-col rounded-3xl border border-zinc-200 bg-white p-8 transition-all hover:border-blue-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-900">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-900/30">
+              <BookOpen size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Tutoriais Simples</h3>
+            <p className="mt-3 text-zinc-600 dark:text-zinc-400">Configuração guiada para FireStick, Android TV e dispositivos diversos.</p>
+          </div>
+
+          <div className="group relative flex flex-col rounded-3xl border border-zinc-200 bg-white p-8 transition-all hover:border-blue-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-900">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-900/30">
+              <ShieldCheck size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Gestão Segura</h3>
+            <p className="mt-3 text-zinc-600 dark:text-zinc-400">Verificação instantânea de validade de PINs e chaves de acesso oficiais.</p>
+          </div>
+
+          <div className="group relative flex flex-col rounded-3xl border border-zinc-200 bg-white p-8 transition-all hover:border-blue-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-900 sm:col-span-2 lg:col-span-1">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-900/30">
+              <MonitorPlay size={24} />
+            </div>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">Multidispositivos</h3>
+            <p className="mt-3 text-zinc-600 dark:text-zinc-400">Sua licença Digital Fun Box funciona perfeitamente em múltiplos sistemas de reprodução.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Compliance com Aspas Escapadas */}
+      <section className="border-y border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <p className="text-sm italic text-zinc-500">
+            &quot;A Digital Fun Box atua como intermediária facilitadora no licenciamento de softwares de entretenimento e conectividade. Não hospedamos, transmitimos ou distribuímos conteúdos protegidos por direitos autorais.&quot;
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
 }
